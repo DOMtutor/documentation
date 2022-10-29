@@ -1,0 +1,43 @@
+.idea/
+*.class
+problems*/*/build
+problems*/*/generators/framework
+problems*/*/generators/defaultImplementations
+problems*/*/output_validators/checker/java
+*/*/problem.yaml.tex
+
+/venv/
+**/data/secret/large*.in
+**/data/secret/xlarge*.in
+**/data/secret/medium*.in
+**/data/secret/small*.in
+**/data/secret/tiny*.in
+**/data/secret/huge*.in
+**/data/secret/sparse*.in
+/problems*/*/errors
+
+__pycache__/
+
+# CMake
+cmake-build-*/
+
+# File-based project format
+*.iws
+
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties

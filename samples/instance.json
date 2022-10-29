@@ -1,0 +1,52 @@
+{
+    "id": "local",
+    "settings": {
+        "score": {
+            "penalty_time": 600.0,
+            "result_priority": {
+                "time_limit": 70,
+                "memory_limit": 95,
+                "output_limit": 90,
+                "run_error": 85,
+                "wrong_answer": 80,
+                "no_output": 99,
+                "presentation_error": 98,
+                "compiler_error": 100,
+                "correct": 1
+            }
+        },
+        "judging": {
+            "memory_limit": 1572864,
+            "output_limit": 8192,
+            "source_size_limit": 256,
+            "source_file_limit": 1,
+            "script_time_limit": 30,
+            "script_memory_limit": 2097152,
+            "script_size_limit": 2621440,
+            "time_overshoot": "2s+50%",
+            "output_storage_limit": 50000,
+            "output_display_limit": 2000,
+            "lazy_eval": false
+        },
+        "display": {
+            "show_pending": true,
+            "show_flags": false,
+            "show_affiliations": true,
+            "show_affiliation_logos": false,
+            "show_teams_submissions": true,
+            "show_sample_output": true,
+            "show_compile": 1
+        },
+        "clarification": {
+            "answers": [
+                "No comment",
+                "Read the problem statement carefully",
+                "Half points granted ##HALF##"
+            ]
+        }
+    },
+    "base_time": 1.0,
+    "user_whitelist": [
+        "python_bot"
+    ]
+}

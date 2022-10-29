@@ -1,0 +1,43 @@
+{
+    "affiliations": [
+        {
+            "country": "AUT",
+            "name": "ISTA",
+            "short_name": "ista"
+        }
+    ],
+    "teams": [
+        {
+            "affiliation": "ista",
+            "category": "jury",
+            "display_name": "Administrator Team",
+            "members": [
+                "admin"
+            ],
+            "name": "admin_team"
+        },
+        {
+            "affiliation": "ista",
+            "category": "participants",
+            "display_name": "User Team",
+            "members": [
+                "user"
+            ],
+            "name": "user_team"
+        }
+    ],
+    "users": [
+        {
+            "display_name": "Administrative User",
+            "email": "admin@localhost",
+            "login": "admin",
+            "role": "admin"
+        },
+        {
+            "display_name": "Normal User",
+            "email": "user@localhost",
+            "login": "user",
+            "role": "participant"
+        }
+    ]
+}

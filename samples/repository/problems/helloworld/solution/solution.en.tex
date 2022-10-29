@@ -1,0 +1,45 @@
+\begin{slide}
+  \begin{block}{Problem}
+    Print ``Hello $x$!''
+  \end{block}
+\end{slide}
+
+% If you want to include listings/verbatim, use begin{fragileslide}, otherwise begin{slide}
+\begin{fragileslide}
+\begin{lstlisting}[language=java,basicstyle=\small]
+import java.util.Scanner;
+
+public class HelloWorld {
+  public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);   
+    int t = s.nextInt();
+    for (int i = 1; i <= t; i++) {
+      String name = s.next();
+      System.out.format(
+        "Case #%d: Hello %s!\n", i, name
+      );
+    }
+  }
+}
+\end{lstlisting}
+\end{fragileslide}
+
+\begin{fragileslide}
+\begin{lstlisting}[language=c++,basicstyle=\small]
+#include <iostream>
+using namespace std;
+
+int main() {
+  int t;
+  string name;
+
+  cin >> t;
+  for (int i = 1; i <= t; ++i) {
+    cin >> name;
+    cout << "Case #" << i << ": Hello ";
+    cout << name << "!" << endl;
+  }
+  return 0;
+}
+\end{lstlisting}
+\end{fragileslide}
