@@ -1,43 +1,43 @@
 {
-    "affiliations": [
-        {
-            "country": "AUT",
-            "name": "ISTA",
-            "short_name": "ista"
-        }
-    ],
-    "teams": [
-        {
-            "affiliation": "ista",
-            "category": "jury",
-            "display_name": "Administrator Team",
-            "members": [
-                "admin"
-            ],
-            "name": "admin_team"
-        },
-        {
-            "affiliation": "ista",
-            "category": "participants",
-            "display_name": "User Team",
-            "members": [
-                "user"
-            ],
-            "name": "user_team"
-        }
-    ],
-    "users": [
-        {
-            "display_name": "Administrative User",
-            "email": "admin@localhost",
-            "login": "admin",
-            "role": "admin"
-        },
-        {
-            "display_name": "Normal User",
-            "email": "user@localhost",
-            "login": "user",
-            "role": "participant"
-        }
-    ]
+  "users": [
+    {
+      "login": "admin",
+      "display_name": "Admin",
+      "email": "admin@localhost",
+      "role": "admin",
+      "password_hash": "$2b$12$3kFMgjihIkjYTAh314NOMOsxlwKwD8dyg0INs2RwwzQV33eKFmjU."
+    },
+    {
+      "login": "user",
+      "display_name": "User",
+      "email": "user@localhost",
+      "role": "participant",
+      "password_hash": "$2b$12$3kFMgjihIkjYTAh314NOMOio8mV2JbOkWi/s8L5ws72FbbezUYDMa"
+    }
+  ],
+  "affiliations": [
+    {
+      "short_name": "foo",
+      "name": "Foo University of Bar"
+    }
+  ],
+  "teams": [
+    {
+      "name": "admin_team",
+      "display_name": "Admin",
+      "category": "jury",
+      "members": [
+        "admin"
+      ]
+    },
+    {
+      "name": "user_team",
+      "display_name": "Awesome!",
+      "category": "participants",
+      "members": [
+        "user"
+      ],
+      "affiliation": "foo"
+    }
+  ]
 }
