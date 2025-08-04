@@ -2,7 +2,7 @@
 
 import sys
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     case_count = int(sys.stdin.readline())
     for case_number in range(1, case_count + 1):
         name = sys.stdin.readline().strip()

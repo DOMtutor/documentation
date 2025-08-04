@@ -9,7 +9,7 @@ import bcrypt
 import pytz
 import tzlocal
 
-from pyjudge.model import (
+from pydomjudge.model import (
     JudgeSettings,
     User,
     UserRole,
@@ -19,15 +19,15 @@ from pyjudge.model import (
     Contest,
     ContestProblem,
 )
-from pyjudge.model.settings import (
+from pydomjudge.model.settings import (
     JudgeInstance,
     ClarificationSettings,
     DisplaySettings,
     ScoringSettings,
     JudgingSettings,
 )
-from pyjudge.repository.kattis import Repository
-from pyjudge.scripts.upload import UsersDescription
+from pydomjudge.repository.kattis import Repository
+from pydomjudge.scripts.upload import UsersDescription
 
 
 def make_settings():
@@ -37,15 +37,21 @@ def make_settings():
         display=DisplaySettings(),
         clarification=ClarificationSettings(),
     )
-    return JudgeInstance(identifier="local", settings=judge_settings, base_time=1.5, user_whitelist=set()).serialize()
+    return JudgeInstance(
+        identifier="local", settings=judge_settings, base_time=1.5, user_whitelist=set()
+    ).serialize()
 
 
 def make_contest():
     repository = Repository(pathlib.Path("repository"))
     problem = repository.problems.load_problem("helloworld")
-    contest_problem = ContestProblem(name="helloworld", points=4, color="blue", problem=problem)
+    contest_problem = ContestProblem(
+        name="helloworld", points=4, color="blue", problem=problem
+    )
 
-    base_time = datetime.datetime.now(tzlocal.get_localzone()).replace(minute=0, second=0, microsecond=0)
+    base_time = datetime.datetime.now(tzlocal.get_localzone()).replace(
+        minute=0, second=0, microsecond=0
+    )
     return Contest(
         key="sample",
         name="Sample Contest",
@@ -62,7 +68,9 @@ def make_contest():
 
 def make_users():
     salt = bcrypt.gensalt()
-    affiliation = Affiliation(short_name="foo", name="Foo University of Bar", country=None)
+    affiliation = Affiliation(
+        short_name="foo", name="Foo University of Bar", country=None
+    )
 
     user = User(
         login_name="user",
@@ -85,17 +93,31 @@ def make_users():
         category=TeamCategory.Participants,
         affiliation=affiliation,
     )
-    admin_team = Team("admin_team", display_name="Admin", members=[admin], category=TeamCategory.Jury, affiliation=None)
+    admin_team = Team(
+        "admin_team",
+        display_name="Admin",
+        members=[admin],
+        category=TeamCategory.Jury,
+        affiliation=None,
+    )
 
-    return UsersDescription(users=[user, admin], affiliations=[affiliation], teams=[user_team, admin_team]).serialize()
+    return UsersDescription(
+        users=[user, admin], affiliations=[affiliation], teams=[user_team, admin_team]
+    ).serialize()
 
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-O", "--output", type=argparse.FileType('w'), default=sys.stdout, help="File output")
-    parser.add_argument("--pretty", action='store_true', help="Pretty-print JSON")
+    parser.add_argument(
+        "-O",
+        "--output",
+        type=argparse.FileType("w"),
+        default=sys.stdout,
+        help="File output",
+    )
+    parser.add_argument("--pretty", action="store_true", help="Pretty-print JSON")
 
     subparsers = parser.add_subparsers(help="Help for commands")
     settings = subparsers.add_parser("settings", help="Create settings")
