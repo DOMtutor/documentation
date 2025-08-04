@@ -15,11 +15,12 @@
 
 ## Using the Upload Script
 
- * Adapt the json files in `samples` as needed; add/change the problems in repository
- * The `<<judge_upload>>` command now means `judge_upload --db db.yml --instance instance.json --repository repository <command>`
- * Sync settings by `<<judge_upload>> settings` (settings are specified through `instance.json`)
- * Sync users by `<<judge_upload>> users users.json` (the passwords of each user is the user name)
- * Sync contest by `<<judge_upload>> contest contest.json --force` (`--force` since the contest is currently running)
+ * Adapt the json files in `samples` as needed (or modify `script.py`, which generates the json files, see below); add/change the problems in repository
+ * Sync settings by `dt_judge_upload settings` (settings are specified through `instance.json`)
+ * Sync users by `dt_judge_upload users users.json` (the passwords of each user is the user name)
+ * Sync contest by `dt_judge_upload contest contest.json --force` (`--force` since the contest is currently running)
+
+For the above commands to work, you need to be within the sample folder (`dt_judge_upload` searches for `db.yml` and `instance.json` in the current directory)
 
 ## Automation
 
