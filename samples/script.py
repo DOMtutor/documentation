@@ -15,6 +15,8 @@ from pydomjudge.model import (
     UserRole,
     Team,
     TeamCategory,
+    DefaultCategory,
+    SystemCategory,
     Affiliation,
     Contest,
     ContestProblem,
@@ -38,7 +40,12 @@ def make_settings():
         clarification=ClarificationSettings(),
     )
     return JudgeInstance(
-        identifier="local", settings=judge_settings, base_time=1.5, user_whitelist=set()
+        identifier="local",
+        settings=judge_settings,
+        base_time=1.5,
+        user_whitelist=set(),
+        allowed_language_keys=["c", "java", "python"],
+        team_categories=[DefaultCategory.Participants],
     ).serialize()
 
 
@@ -90,14 +97,14 @@ def make_users():
         "user_team",
         display_name="Awesome!",
         members=[user],
-        category=TeamCategory.Participants,
+        category=DefaultCategory.Participants,
         affiliation=affiliation,
     )
     admin_team = Team(
         "admin_team",
         display_name="Admin",
         members=[admin],
-        category=TeamCategory.Jury,
+        category=SystemCategory.Jury,
         affiliation=None,
     )
 

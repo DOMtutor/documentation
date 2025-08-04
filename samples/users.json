@@ -1,43 +1,41 @@
 {
-  "users": [
-    {
-      "login": "admin",
-      "display_name": "Admin",
-      "email": "admin@localhost",
-      "role": "admin",
-      "password_hash": "$2b$12$3kFMgjihIkjYTAh314NOMOsxlwKwD8dyg0INs2RwwzQV33eKFmjU."
+    "users": {
+        "admin": {
+            "display_name": "Admin",
+            "email": "admin@localhost",
+            "role": "admin",
+            "password_hash": "$2b$12$yQuo4w.tvaSsHnCz2gNIKu0QORoSK1hGvDv1z7BcxAuwhxzMHiA4u"
+        },
+        "user": {
+            "display_name": "User",
+            "email": "user@localhost",
+            "role": "participant",
+            "password_hash": "$2b$12$yQuo4w.tvaSsHnCz2gNIKu0ySsGTgekcNutDMFlKUK39tVy/6fKYK"
+        }
     },
-    {
-      "login": "user",
-      "display_name": "User",
-      "email": "user@localhost",
-      "role": "participant",
-      "password_hash": "$2b$12$3kFMgjihIkjYTAh314NOMOio8mV2JbOkWi/s8L5ws72FbbezUYDMa"
-    }
-  ],
-  "affiliations": [
-    {
-      "short_name": "foo",
-      "name": "Foo University of Bar"
-    }
-  ],
-  "teams": [
-    {
-      "name": "admin_team",
-      "display_name": "Admin",
-      "category": "jury",
-      "members": [
-        "admin"
-      ]
+    "affiliations": {
+        "foo": {
+            "short_name": "foo",
+            "name": "Foo University of Bar"
+        }
     },
-    {
-      "name": "user_team",
-      "display_name": "Awesome!",
-      "category": "participants",
-      "members": [
-        "user"
-      ],
-      "affiliation": "foo"
+    "teams": {
+        "admin_team": {
+            "name": "admin_team",
+            "display_name": "Admin",
+            "category": "jury",
+            "members": [
+                "admin"
+            ]
+        },
+        "user_team": {
+            "name": "user_team",
+            "display_name": "Awesome!",
+            "category": "participants",
+            "members": [
+                "user"
+            ],
+            "affiliation": "foo"
+        }
     }
-  ]
 }
